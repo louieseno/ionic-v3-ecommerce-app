@@ -1,0 +1,146 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  app:        #FF6500
+);
+
+$text-input-highlight-color-invalid: #ea6153;
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+$segment-button-ios-text-color: #f05000;
+$toolbar-ios-title-text-color: #FF6500;
+$segment-button-ios-background-color-activated: #222;
+$toolbar-ios-button-color: #222;
+
+$radio-ios-color-on: #FF6500;
+$radio-ios-color-off: #222;	
+
+$alert-ios-radio-label-text-color-checked: #FF6500;
+$alert-ios-radio-border-color-on: #FF6500;
+$alert-ios-radio-label-text-color: #222;
+$alert-ios-radio-border-color-off: #222;
+
+$badge-ios-background-color: #FF6500;
+
+
+$text-input-ios-highlight-color: #EFF0F1;
+
+$label-ios-text-color-focused: #222;
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+$segment-button-md-text-color-activated: #f05000;
+$toolbar-md-title-text-color: #FF6500;
+$segment-button-md-border-color-activated: #222;
+$button-md-padding-end:5px;
+$button-md-padding-start:5px;
+$toolbar-md-button-color: #222;
+
+$radio-md-color-on: #FF6500;
+$radio-md-color-off: #222;
+
+$alert-md-radio-label-text-color-checked: #FF6500;
+$alert-md-radio-border-color-on: #FF6500;
+$alert-md-radio-label-text-color: #222;
+$alert-md-radio-border-color-off: #222;
+
+$badge-md-background-color: #FF6500;
+
+
+$text-input-md-highlight-color: #EFF0F1;
+
+$label-md-text-color-focused: #222;
+
+
+
+$toast-md-title-padding-top: 1.5rem;
+$toast-md-title-padding-bottom: 1.5rem;
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+$segment-button-wp-text-color-activated: #f05000;
+$toolbar-wp-title-text-color: #FF6500;
+$toolbar-wp-button-color: #222;
+
+$radio-wp-color-on: #FF6500;
+$radio-wp-color-off: #222;	
+
+$alert-wp-radio-label-text-color-checked: #FF6500;
+$alert-wp-radio-border-color-on: #FF6500;
+$alert-wp-radio-label-text-color: #222;
+$alert-wp-radio-border-color-off: #222;
+
+$badge-wp-background-color: #FF6500;
+
+
+$text-input-wp-highlight-color: #EFF0F1;
+
+$label-wp-text-color-focused: #222;
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

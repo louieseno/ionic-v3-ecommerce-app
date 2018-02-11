@@ -1,0 +1,127 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.activePage{
+	background-color: map-get($colors, light);
+}
+
+.toastCss{
+	top: 10px;
+    right: 18px;
+    left: 13px;
+    z-index: 100002;
+    max-width: 300px;
+}
+
+//ERROR
+.error{
+	font-size: 0.9em;
+	color: #ea6153;
+	margin-left:10px;
+}
+
+//CART ICON 
+ .cart-icon{
+	font-size: 20px;
+	margin-top:3px;
+	margin-right:3px;
+}
+
+ion-badge{
+    line-height: 0.7;
+    margin-bottom: 17px;
+	margin-left:-9px;
+	padding: 2px 4px;
+	z-index: 2;
+}
+
+ 
+// NAVIGATION
+.navicon{
+	margin-right: 5px;
+}
+
+.navicon2{
+	margin-left: 5px;
+}
+
+//FORMS
+.form-button{
+	margin-top:30px;
+}
+
+//PRODUCTS
+
+.product-col{
+	text-align: center;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 0 1px -2px rgba(0,0,0,.2);
+    margin-bottom:15px;
+	.product-price{
+		font-size:17px;
+		font-weight:bold;
+		color:#FF6500;
+	}
+	.product-description{
+		font-size:15px;
+		font-weight:400;
+	}	
+}
+
+
+
+// PROGRESS BAR 
+
+#status-buttons{
+	margin-left:5px;
+}
+#status-buttons p { 
+	color:#FF6500; 
+	display:inline-block; 
+	font-size:14px;
+	margin-right:10px; 
+	text-align:center;
+}
+//PROCESS CHECKOUT ACTIVE
+.active{ 
+	font-weight:bold;
+	border-bottom: 2px solid #222;
+
+}
+
+ 
+//MENU
+ .my-container  {
+  background: url(../assets/img/14.jpg) !important;
+   background-repeat: repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    height: 20%;
+    position: relative;
+}
+
+ion-menu .toolbar-title-md, ion-menu .toolbar-title-wp, ion-menu .toolbar-title-ios{
+	padding: 80px 12px 0px 12px;
+	color: white;
+}
+ion-menu .toolbar-title-ios{
+	text-align:left;
+}
+
+
+
+

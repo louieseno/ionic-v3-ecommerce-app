@@ -1,0 +1,82 @@
+<!--
+  Generated template for the WritePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Write Review</ion-title>
+    <ion-buttons right>
+	    <button (click)="closeModal()" ion-button >    
+	        <ion-icon name="close" class="close-modal-icon"></ion-icon>
+	    </button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ 	<ion-card-title class="inline-title">
+		<h5><span class="single-desc" >Product Name: {{item}}</span></h5>
+		<h5><span  class="single-price">Product Price: Php {{price.toFixed(2)}}</span></h5>
+	</ion-card-title>
+	<ion-label>Rate this product</ion-label>
+    <rating [(ngModel)]="rate" 
+        readOnly="false" 
+        max="5" 
+        emptyStarIconName="star-outline" 
+        halfStarIconName="star-half" 
+        starIconName="star" 
+        nullable="false"
+        (ngModelChange)="onModelChange($event)"> 
+   </rating>
+   <div class="error-review" *ngIf="star == undefined  && submitAttempt">
+	    <p>* Please rate the product.</p>
+	 </div>
+	<form [formGroup]="writtenForm">
+	    <ion-item>
+	      <ion-label floating> Your Name </ion-label>
+	      <ion-input type="text" formControlName="name" [(ngModel)]="fullnameBind"></ion-input>
+	    </ion-item>
+        <div class="error-review" *ngIf="writtenForm.get('name').hasError('required') && submitAttempt">
+	        <p>* Please enter a review title.</p>
+	     </div>
+	     <div class="error-review" *ngIf="writtenForm.get('name').hasError('maxlength') && submitAttempt ">
+	        <p>* Review title must not be more than 30 charasters.</p>
+	      </div>
+
+	    <ion-item>
+	      <ion-label floating> Review Title </ion-label>
+	      <ion-input type="text" formControlName="retitle"></ion-input>
+	    </ion-item>
+	   	 <div class="error-review" *ngIf="writtenForm.get('retitle').hasError('required') && submitAttempt">
+	        <p>* Please enter a review title.</p>
+	      </div>
+	      <div class="error-review" *ngIf="writtenForm.get('retitle').hasError('maxlength') && submitAttempt ">
+	        <p>* Review title must not be more than 20 charasters.</p>
+	      </div>
+
+	     <ion-item>
+	      <ion-label floating> Review Description </ion-label>
+	      <ion-textarea type="text" formControlName="redesc"></ion-textarea>
+	    </ion-item> 
+	    <div class="error-review" *ngIf="writtenForm.get('redesc').hasError('required') && submitAttempt">
+        <p>* Please enter a review description.</p>
+      </div>
+      <div class="error-review" *ngIf="writtenForm.get('redesc').hasError('maxlength') && submitAttempt ">
+       <p>* Review description must not be more than 30 charasters.</p>
+      </div>
+	</form>
+	
+</ion-content>
+
+<ion-footer>
+	<button ion-button full large color="app" (click)="writeRev()"> 
+	  	SUBMIT REVIEW
+	  	<ion-icon name="arrow-forward" class="navicon2" ></ion-icon>
+	</button>
+</ion-footer>
+

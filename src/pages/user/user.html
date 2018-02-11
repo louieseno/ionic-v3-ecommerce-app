@@ -1,0 +1,47 @@
+<!--
+  Generated template for the UserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Account</ion-title>  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-label>
+      User Profile:        
+  </ion-label>
+
+    <ion-card>
+      <ion-list class="user-profile">
+      <ion-item>
+        <ion-label floating> <ion-icon name="person" class="navicon"></ion-icon>Fullname</ion-label>
+        <ion-input  disabled value="{{firstname}} {{lastname}}"></ion-input>  
+      </ion-item>
+      <ion-item>
+        <ion-label floating> <ion-icon name="star" class="navicon"></ion-icon>Birthday</ion-label>
+        <ion-input  disabled value="{{birthday}}"></ion-input>  
+      </ion-item>
+      <ion-item>
+        <ion-label floating> <ion-icon name="mail" class="navicon"></ion-icon>Email Address</ion-label>
+        <ion-input  disabled value="{{email}}"></ion-input>  
+      </ion-item>
+      <ion-item>
+        <ion-label floating> <ion-icon name="{{genderIcon}}" class="navicon">
+        </ion-icon>Gender</ion-label>
+        <ion-input  disabled value="{{gender}}"></ion-input>  
+      </ion-item>
+      <ion-item>
+        <ion-label floating> <ion-icon name="contact" class="navicon"></ion-icon>
+        Phone Number</ion-label>
+        <ion-input  disabled value="{{contact}}"></ion-input>  
+      </ion-item>
+    </ion-list>
+    </ion-card>
+</ion-content>

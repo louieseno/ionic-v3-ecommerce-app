@@ -1,0 +1,53 @@
+page-search {
+ .inline-title{
+ 	margin-left:15px;
+ 	margin-right:5px;
+ }
+ .single-desc{
+ 	color:  #666666;
+ 	
+ }
+ .single-price{
+ 	color:  #FF6500;
+ }
+
+ .button-review{
+ 	padding: 0px 80px;
+ 	margin-left:10px;
+ }
+ .review-title{
+ 	font-weight:bold;
+ 	font-size:15px;
+ }
+ .review-poster{
+ 	font-size:10px;
+ 	color: #FF6500;
+ }
+  .review-date{
+ 	font-size:10px;
+ 	color: #222;
+ 	float:right;
+ }
+
+ rating > ul {
+	  padding: 0px;
+
+	 display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+
+	  &.rating li {
+	    padding: 0px !important;
+	    background: none;
+	    color: #ffb400;
+
+	    ion-icon {
+	      font-size: 15px;
+	    }
+	  }
+	}
+}

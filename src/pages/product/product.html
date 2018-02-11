@@ -1,0 +1,130 @@
+<ion-header>
+   <ion-navbar>
+	    <ion-title text-center>APPARADOOR</ion-title>
+	    <ion-buttons right>
+	      <button ion-button color="dark" [navPush]="pushCart" >
+	        <ion-icon name="cart" class="cart-icon"></ion-icon>
+	        <ion-badge *ngIf="badge">{{cartItem}}</ion-badge>
+	      </button>
+	    </ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-card> 
+		<img src="{{getImage}}" alt="">
+	</ion-card>
+	<ion-card-title class="inline-title">
+		<h5 class="single-desc" >{{getTitle}}</h5>
+		<h4 class="single-price" >Php {{getPrice.toFixed(2)}}</h4>
+	</ion-card-title>
+		<ion-list *ngIf="category == 'tops' ">
+		  <ion-item>
+		    <ion-label>Size</ion-label>
+		    <ion-select [(ngModel)]="getSize">
+		      <ion-option value="XS">XS</ion-option>
+		      <ion-option value="Small">Small</ion-option>
+		      <ion-option value="Medium">Medium</ion-option>
+		      <ion-option value="Large">Large</ion-option>
+		      <ion-option value="XL">XL</ion-option>
+		      <ion-option value="XXL">XXL</ion-option>
+		    </ion-select>
+		  </ion-item>
+		  <p *ngIf='sizeErr' class="error"> * Select Size </p>
+		</ion-list>
+	
+	<ion-list *ngIf="category == 'bottoms' ">
+	  <ion-item>
+	    <ion-label>Size</ion-label>
+	    <ion-select [(ngModel)]="getSize">
+	      <ion-option value="22">22</ion-option>
+	      <ion-option value="23">23</ion-option>
+	      <ion-option value="24">24</ion-option>
+	      <ion-option value="25">25</ion-option>
+	      <ion-option value="26">26</ion-option>
+	      <ion-option value="27">27</ion-option>
+	      <ion-option value="28">28</ion-option>
+	      <ion-option value="29">29</ion-option>
+	      <ion-option value="30">30</ion-option>
+	      <ion-option value="31">31</ion-option>
+	      <ion-option value="32">32</ion-option>
+	    </ion-select>
+	  </ion-item>
+	  <p *ngIf='sizeErr' class="error"> * Select Size </p>
+	</ion-list>
+
+	<ion-list *ngIf="category == 'outwears' ">
+	  <ion-item>
+	    <ion-label>Size</ion-label>
+	    <ion-select [(ngModel)]="getSize">
+	      <ion-option value="Small">Small</ion-option>
+	      <ion-option value="Medium">Medium</ion-option>
+	      <ion-option value="Large">Large</ion-option>
+	      <ion-option value="XL">XL</ion-option>
+	    </ion-select>
+	  </ion-item>
+	  <p *ngIf='sizeErr' class="error"> * Select Size </p>
+	</ion-list>
+	<ion-label>Product Details</ion-label>
+	<ion-card>
+		<ul *ngFor="let i of getDesc">
+			<li>{{i}}</li>  
+		</ul>	
+	</ion-card>
+	
+    <button ion-button color="dark" class="button-review" (click)="review()">Write Review</button>
+
+    <ion-label> Ratings & Reviews </ion-label>
+  
+    <ion-toolbar>
+	   
+		 		<ion-item>
+				    <ion-label>Filter Stars</ion-label>
+				    <ion-select [(ngModel)]="stars" (ionChange)="onFilterChange($event)">
+				      <ion-option value="all">All Stars</ion-option>
+				      <ion-option value="5">5 Stars</ion-option>
+				      <ion-option value="4">4 Stars</ion-option>
+				      <ion-option value="3">3 Stars</ion-option>
+				      <ion-option value="2">2 Stars</ion-option>
+				      <ion-option value="1">1 Star</ion-option>
+				    </ion-select>
+				</ion-item >
+			
+	      		
+			   <ion-item>
+				    <ion-label>Sort Post</ion-label>
+				    <ion-select [(ngModel)]="postSort" (ionChange)="onSortChange($event)">
+				      <ion-option value="recent">Recent</ion-option>
+				      <ion-option value="old">Old</ion-option>
+				    </ion-select>
+				</ion-item >
+				
+	
+	</ion-toolbar>
+    
+    <ion-card *ngFor="let li of list">
+    	<ion-item>
+    		
+    		<h4 class="review-title">
+    			{{li.retitle}}
+    		</h4>
+	        
+			 <rating readOnly="true" [(ngModel)]="li.rate"></rating>
+    		<h6 class="review-poster">By {{li.name}}</h6>
+    		
+    		<p>{{li.redesc}}</p>	
+    		<h6 class="review-date">{{li.datetime}}</h6>
+    	</ion-item>
+    	
+    </ion-card>
+    
+
+</ion-content>
+
+<ion-footer>
+	<button ion-button full large color="app" (click)="addCart()" > 
+	    <ion-icon name="cart" class="navicon" ></ion-icon>
+		Add to Cart
+	</button>
+</ion-footer>	

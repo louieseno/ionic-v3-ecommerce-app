@@ -1,0 +1,65 @@
+page-confirm {
+	.review-item h2{
+		color: #FF6500;
+		font-weight: bold;
+	}
+	.review-item p {
+		color: #222;
+	}
+
+	.review-trash{
+		font-size: 30px;
+	}
+
+	.review-edit{
+		font-size: 20px;
+	}
+
+	.total h4{
+		float:left;
+		margin-right: 20px;
+		font-weight: 500;
+	}
+
+	.total h5{
+		
+		color: #FF6500;
+	}
+
+	.ship-info, .bill-info{
+		padding-top:10px;
+		padding-left:10px;
+	}
+	.ship-info button, .bill-info button{
+		font-weight: 500;
+	}
+
+	.ship-info h2{
+		color: #FF6500;
+	}
+	.bill-info h2{
+		color: #FF6500;
+	}
+	.bill-info ion-label{
+		color: rgb(102, 102, 102);
+	}
+
+	.message h4{
+		color: green;
+	}
+	.message h5{
+		color: #222;
+		font-size: 14px;
+	}
+	.message p{
+		color: #666666;
+	}
+	.ornum{
+		font-weight:bold;
+		color: black;
+	}
+	.close-modal-icon{
+		color: black;
+		font-size: 14px;
+	}
+}

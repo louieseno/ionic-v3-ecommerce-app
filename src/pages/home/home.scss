@@ -1,0 +1,51 @@
+page-home {
+   // HEADER BANNER
+	.header-wrapper {
+    
+	  ion-card {
+	    position: relative;
+	    text-align: center;
+	  }
+	  
+	  .card-title {
+	    position: absolute;
+	    top: 36%;
+	    font-size: 2.0em;
+	    width: 100%;
+	    font-weight: bold;
+	    color: #fff;
+	  }
+
+	  .card-subtitle {
+	    font-size: 1.0em;
+	    position: absolute;
+	    top: 60%;
+	    width: 100%;
+	    color: #fff;
+	  }
+
+	}
+ // TITLES
+	.appTitle h4{
+		border-left: 2px solid #FF6500;
+	    padding-left: 8px;
+	}
+ // TAB-BUTTONS-CATEGORY   
+ 	 .tab-home{
+ 	    padding-left: 40px;
+ 	   
+    	
+ 	 }
+    .tab-home button{
+    	float: left;
+    }
+	
+	.search-item h4{
+		color: #FF6500;
+		font-weight: bold;
+	}
+
+	
+}
+
+

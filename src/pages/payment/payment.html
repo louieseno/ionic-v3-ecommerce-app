@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Checkout</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	 <div id="status-buttons" class="text-center">
+        <p><span>1.</span> SHIPPING</p>
+        <p class="active"><span>2.</span> PAYMENT</p>
+        <p><span>3.</span> REVIEW</p>
+    </div>
+    
+    <ion-label class="payment-label">Payment Options: </ion-label>
+
+    <ion-list radio-group class="payment-group" [(ngModel)]="pay" >
+      <ion-item class="payment-ops">
+        <ion-label > 
+            <ion-icon name="card" class="navicon"></ion-icon>
+            Pay Pal
+        </ion-label>
+        <ion-radio checked="true" value="creditcard"></ion-radio>
+      </ion-item>
+      
+      <ion-item class="payment-ops">
+        <ion-label >
+            <ion-icon name="cash" class="navicon"></ion-icon>
+            Cash On Delivery
+        </ion-label>
+        <ion-radio value="cashon"></ion-radio>
+      </ion-item>
+    </ion-list>
+    
+</ion-content>
+
+<ion-footer>
+	<button ion-button full large color="app" (click)="paymentCon()"> 
+		CONTINUE
+    <ion-icon name="arrow-forward" class="navicon2" ></ion-icon>
+	</button>
+</ion-footer>

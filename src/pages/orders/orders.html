@@ -1,0 +1,46 @@
+<!--
+  Generated template for the OrdersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Orders</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-label>Products Ordered: </ion-label>
+    <div *ngIf="display">
+      <h5  class="empty-cart"><ion-icon name="cart" class="navicon"></ion-icon>Order History is empty</h5>
+    </div>
+	    
+    <ion-item>
+        <ion-label>Sort Post</ion-label>
+        <ion-select [(ngModel)]="postSort" (ionChange)="onSortChange($event)">
+          <ion-option value="recent">Recent</ion-option>
+          <ion-option value="old">Old</ion-option>
+        </ion-select>
+    </ion-item >
+        
+	<ion-list >
+      <ion-card  *ngFor="let li of item">
+        <ion-item class="cart-item" >
+          <ion-thumbnail item-start>
+            <img src="{{li.image}}">
+          </ion-thumbnail>
+          <h4>{{li.item}}</h4>
+          <h2> Php {{li.price.toFixed(2)}} </h2>
+          <h5>Size: {{li.size}}</h5>
+          <p>Qty: {{li.qty}}</p> 
+          <h6 class="order-date">{{li.datetime}}</h6>
+
+        </ion-item>
+      </ion-card>
+      
+	</ion-list>
+</ion-content>

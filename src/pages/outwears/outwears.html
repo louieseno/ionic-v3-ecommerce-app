@@ -1,0 +1,105 @@
+<ion-header>
+	<ion-navbar> 	
+	    <ion-title text-center>Outwears</ion-title>
+	    <ion-buttons right>
+	      <button ion-button color="dark" [navPush]="pushCart" >
+	        <ion-icon name="cart" class="cart-icon"></ion-icon>
+	        <ion-badge *ngIf="badge">{{cartItem}}</ion-badge>
+	      </button>
+	    </ion-buttons>
+	</ion-navbar>
+  
+  <ion-toolbar>
+		<ion-segment [(ngModel)]="cat">
+		    <ion-segment-button value="men" color="app">
+		      Men
+		    </ion-segment-button>
+		    <ion-segment-button value="women" colo="app">
+		      Women
+		    </ion-segment-button>
+	    </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    
+    <div [ngSwitch]="cat">
+      <!-- MEN -->
+	    <ion-list *ngSwitchCase="'men'">
+	        <ion-segment [(ngModel)]="style">
+			    <ion-segment-button value="hoodies" color="app">
+			      Hoodies/Parkas
+			    </ion-segment-button>
+			    <ion-segment-button value="jacket" colo="app">
+			      Jackets/Coat
+			    </ion-segment-button>
+		    </ion-segment>
+		    <div [ngSwitch]="style"> 
+		      <div *ngSwitchCase="'hoodies'">
+		      		<ion-grid>
+			            <ion-row>
+			              <ion-col class="product-col" col-6 *ngFor="let item of filterItemsOfType('hoodies','outM')" 
+			              (click)="productPage(item)">
+			                <img [src]="item.image">
+			                 <h5 class="product-description">{{item.title}}</h5>
+                			 <h4 class="product-price">Php {{item.price.toFixed(2)}}</h4>
+			              </ion-col>
+			            </ion-row>
+		        	</ion-grid>
+		        </div>
+		        <div *ngSwitchCase="'jacket'">
+		      		<ion-grid>
+			            <ion-row>
+			              <ion-col class="product-col" col-6 *ngFor="let item of filterItemsOfType('jackets','outM')" 
+			              (click)="productPage(item)">
+			                <img [src]="item.image">
+			                 <h5 class="product-description">{{item.title}}</h5>
+                			 <h4 class="product-price">Php {{item.price.toFixed(2)}}</h4>
+			              </ion-col>
+			            </ion-row>
+		        	</ion-grid>
+		        </div>
+		    </div>
+	    </ion-list>
+	    
+	    
+        <!-- WOMEN -->
+	    <ion-list *ngSwitchCase="'women'">
+	       <ion-segment [(ngModel)]="style">
+			    <ion-segment-button value="hoodies" color="app">
+			      Hoodies/Parkas
+			    </ion-segment-button>
+			    <ion-segment-button value="jacket" colo="app">
+			      Jackets/Coat
+			    </ion-segment-button>
+		    </ion-segment>
+		    <div [ngSwitch]="style"> 
+		        <div *ngSwitchCase="'hoodies'">
+		      		<ion-grid>
+			            <ion-row>
+			              <ion-col class="product-col" col-6 *ngFor="let item of filterItemsOfType('hoodies','outW')" 
+			              (click)="productPage(item)">
+			                <img [src]="item.image">
+			                 <h5 class="product-description">{{item.title}}</h5>
+                			 <h4 class="product-price">Php {{item.price.toFixed(2)}}</h4>
+			              </ion-col>
+			            </ion-row>
+		        	</ion-grid>
+		        </div>
+		        <div *ngSwitchCase="'jacket'">
+		      		<ion-grid>
+			            <ion-row>
+			              <ion-col class="product-col" col-6 *ngFor="let item of filterItemsOfType('jackets','outW')" 
+			              (click)="productPage(item)">
+			                <img [src]="item.image">
+			                 <h5 class="product-description">{{item.title}}</h5>
+                			 <h4 class="product-price">Php {{item.price.toFixed(2)}}</h4>
+			              </ion-col>
+			            </ion-row>
+		        	</ion-grid>
+		        </div>
+		    </div>
+	    </ion-list>
+    </div>
+</ion-content>

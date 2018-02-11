@@ -1,0 +1,14 @@
+page-user {
+	.user-profile>ion-item{
+		font-size: 16px;
+	}
+	input[type="text"][disabled] {
+	   color: #000;
+	}
+	.text-input[disabled] {
+ 	   opacity: 1;
+	}
+	ion-content > ion-label{
+		font-size: 14px;
+	}
+}

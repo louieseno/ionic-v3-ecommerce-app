@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+     <button ion-button menuToggle  color="dark">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>WELCOME</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div>
+    	<img src="assets/img/apparador.png" class="img-logo">
+    </div>
+
+	<form [formGroup]="registerForm">
+		<ion-item>
+	      <ion-label floating>First Name</ion-label>
+	      <ion-input type="text" formControlName="firstname"></ion-input>
+	    </ion-item>
+	    <div class="error-register" 
+		*ngIf="!registerForm.controls.firstname.valid  && submitAttempt">
+			<p>* Please enter a valid name.</p>
+		</div>
+
+	    <ion-item>
+	      <ion-label floating>Last Name</ion-label>
+	      <ion-input type="text" formControlName="lastname"></ion-input>
+	    </ion-item>
+	    <div class="error-register" 
+		*ngIf="!registerForm.controls.lastname.valid  && submitAttempt">
+			<p>* Please enter a valid name.</p>
+		</div>
+
+	    <ion-item>
+	      <ion-label floating>Email Address</ion-label>
+	      <ion-input type="text" formControlName="email"></ion-input>
+	    </ion-item>
+	    <div class="error-register" 
+		*ngIf="!registerForm.controls.email.valid && submitAttempt">
+			<p>* Please enter a valid email address.</p>
+		</div>
+		<div *ngIf = 'loginError' class="error-register">
+	        <p>{{loginMessage}}</p>
+	    </div>
+
+	    <ion-item>
+	      <ion-label floating>Birthday</ion-label>
+	      <ion-datetime displayFormat="MMM DD YYYY" formControlName="birthday"></ion-datetime>
+	    </ion-item>
+        <div class="error-register" 
+		*ngIf="!registerForm.controls.birthday.valid && submitAttempt">
+			<p>* Please enter a valid email address.</p>
+		</div>
+
+	    <ion-item>
+		    <ion-label floating>Gender</ion-label>
+		    <ion-select formControlName="gender">
+		      	<ion-option value="Male">Male</ion-option>
+			  	<ion-option value="Female">Female</ion-option>
+		    </ion-select>
+		</ion-item>
+		<div class="error-register" 
+		*ngIf="!registerForm.controls.gender.valid && submitAttempt">
+			<p>* Please enter a valid email address.</p>
+		</div>
+
+	    <ion-item>
+	      <ion-label floating>Password</ion-label>
+	      <ion-input type="password" formControlName="password"></ion-input>
+	    </ion-item>
+	    <div class="error-register" 
+		*ngIf="!registerForm.controls.password.valid  && submitAttempt">
+			<p>* Please enter a valid password.</p>
+		</div>
+	    
+	    <ion-item>
+	      <ion-label floating>Phone Number</ion-label>
+	      <ion-input type="text" formControlName="contact"></ion-input>
+	    </ion-item> 
+	    <div class="error-register" 
+			*ngIf="!registerForm.controls.contact.valid  && submitAttempt">
+			<p>* Please enter a valid contact number.</p>
+		</div>
+		
+	    <div class="form-button"> 
+	        <button ion-button block color="dark" (click)="register()">Register</button> 
+	    </div>   
+	</form>
+</ion-content>
+
+

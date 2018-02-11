@@ -1,0 +1,29 @@
+page-orders {
+	.cart-item h2{
+		color: #FF6500;
+		font-weight: bold;
+	}
+	.cart-item p {
+		color: #222;
+	}
+	.cart-trash{
+		font-size: 30px;
+	}
+
+	[padding] h5:first-child{
+		margin-top: 16.7rem;
+	}
+
+	.empty-cart{
+		color: #b3b3b3;
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.order-date{
+	 	font-size:10px;
+	 	color: #222;
+	 	float:right;
+	 }
+
+}

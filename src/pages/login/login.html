@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+     <button ion-button menuToggle  color="dark">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>WELCOME</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div>
+    	<img src="assets/img/apparador.png" class="img-logo">
+    </div>
+	<form [formGroup]="loginForm">
+      <div *ngIf = 'loginError' class="error-login">
+        <p>{{loginMessage}}</p>
+      </div>
+
+	    <ion-item>
+	      <ion-label floating> Email Address </ion-label>
+	      <ion-input type="text" formControlName="email"></ion-input>
+	    </ion-item>
+       <div class="error-login" 
+         *ngIf="!loginForm.controls.email.valid  && submitAttempt">
+        <p>* Please enter a valid email address.</p>
+      </div>
+
+	    <ion-item>
+	      <ion-label floating> Password </ion-label>
+	      <ion-input type="password" formControlName="password"></ion-input>
+	    </ion-item>
+      <div class="error-login" *ngIf="loginForm.get('password').hasError('required') && submitAttempt">
+        <p>* Password field is required.</p>
+      </div>
+      <div class="error-login" *ngIf="loginForm.get('password').hasError('minlength') && submitAttempt ">
+        <p>* Password must be a minimum of 8 charasters.</p>
+      </div>
+      <div class="error-login" *ngIf="loginForm.get('password').hasError('pattern') && submitAttempt ">
+        <p>* Please enter a valid password.</p>
+      </div>
+      
+      <div class="form-button"> 
+        <button ion-button block color="dark" (click)='loginUser()'>Login</button> 
+      </div>  
+	</form>
+  
+  <div text-center class="passwordlink">
+    <a href="" >Forgot Password?</a>
+  </div>
+  
+</ion-content>
+

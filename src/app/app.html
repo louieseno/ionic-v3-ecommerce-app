@@ -1,0 +1,38 @@
+ <ion-menu [content]="content" id="menu1" enabled="false">
+    <ion-header class="my-container">
+      <ion-title class="title-menu">Menu</ion-title>
+  </ion-header>
+
+
+  <ion-content>
+    <ion-list>
+      <ion-item menuClose ion-item *ngFor="let p of userPages"  [class.activePage] = "checkActive(p)"
+       (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" class="navicon"></ion-icon>{{p.title}}
+      </ion-item>
+      <ion-item (click)="logout()">
+        <ion-icon name="log-out" class="navicon"></ion-icon>Logout
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+ <ion-menu [content]="content" id="menu2" enabled="false">
+  <ion-header class="my-container">
+      <ion-title class="title-menu">Menu</ion-title>
+  </ion-header>
+
+  <ion-content >
+    <ion-list >
+      <ion-item menuClose ion-item *ngFor="let p of pages" [class.activePage] = "checkActive(p)"
+      (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" class="navicon"></ion-icon>{{p.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>
+
+
+

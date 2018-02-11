@@ -1,0 +1,25 @@
+.ios, .md, .wp{
+  page-login {
+    img{
+      width: 200px;
+      height: 200px;
+      margin-left: 40px;
+      margin-right: 55px;
+    }
+    
+    .passwordlink{
+    	margin-top:50px;
+    }
+    .passwordlink a{
+      text-decoration: none;
+      color: #222;
+    }
+    p {
+        font-size: 0.9em;
+        color: #ea6153;
+      }
+    .error-login{
+      margin-left: 15px;
+    }
+  }
+}

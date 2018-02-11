@@ -1,0 +1,29 @@
+page-cart {
+	.cart-item h2{
+		color: #FF6500;
+		font-weight: bold;
+	}
+	.cart-item p {
+		color: #222;
+	}
+	.qty{
+		padding: 5px 8px;
+		margin: 0px 4px;
+		font-size:20px;
+		box-shadow: 0 0 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 0 1px -2px rgba(0,0,0,.2);
+	}	
+
+	.empty-cart{
+		color: #b3b3b3;
+		font-size: 16px;
+		text-align: center;
+
+	}
+	.cart-trash{
+		font-size: 30px;
+	}
+
+	[padding] h5:first-child{
+		margin-top: 16.7rem;
+	}
+}

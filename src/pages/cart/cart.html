@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <div *ngIf="display == true">
+   		<ion-list >
+		  <ion-item class="cart-item" *ngFor="let li of list">
+		    <ion-thumbnail item-start>
+		      <img src="{{li.image}}">
+		    </ion-thumbnail>
+		    <h4>{{li.title}}</h4>
+		    <h2> Php {{li.price.toFixed(2)}} </h2>
+		    <h5>Size: {{li.size}}</h5>
+		    <p>
+		    	<ion-icon class="navicon2 qty" name="remove" (tap)="minQty($event, li)"></ion-icon>
+		    	{{li.qty}}
+		    	<ion-icon class="navicon2 qty" name="add" (tap)="addQty($event, li)"></ion-icon>
+		    	
+		    </p>
+		    <button ion-button clear item-end (click)="deleteItem(li)">
+		    	<ion-icon name="trash" class="cart-trash" color="dark"></ion-icon>
+		    </button>
+		  </ion-item>
+		</ion-list>
+   </div>
+    <div *ngIf="display == false" >
+   		<h5 class="empty-cart"><ion-icon name="cart" class="navicon"></ion-icon>Cart is empty</h5>
+   </div>
+ 	
+</ion-content>
+
+<ion-footer *ngIf="display == true">
+	<button ion-button full large color="app" (click)="confirmPage()"> 
+		<ion-icon name="checkbox-outline" class="navicon" ></ion-icon>
+		CHECKOUT
+	</button>
+</ion-footer>

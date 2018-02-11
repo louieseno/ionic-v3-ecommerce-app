@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ConfirmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="message">
+    	<h4><ion-icon name="checkmark-circle" class="navicon"></ion-icon>Order Successful</h4>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="message"> 
+		<h5>Thank you for choosing Apparadoor!</h5>
+		<p>You will receive your order in 1-6 days</p>
+		<p>Your order confirmation number is  <span class="ornum">{{orderNumber}}</span> </p>
+	</div>
+	<div>
+   		<ion-list >
+		  <ion-item class="review-item" *ngFor="let li of list">
+		    <ion-thumbnail item-start>
+		      <img src="{{li.image}}">
+		    </ion-thumbnail>
+		    <h4>{{li.item}}</h4>
+		    <h2> Php {{li.price.toFixed(2)}} </h2>
+		    <h5>Size: {{li.size}}</h5>
+		    <p>Quantity: {{li.qty}}</p>
+		  </ion-item>
+		</ion-list>
+   </div>
+	
+	<div class="deliver"> 
+    	<ion-card>
+			<ion-item>
+		      <ion-label> 
+		      	<ion-icon name="cube" class="navicon" color="app"></ion-icon>
+		      	Standard Delivery: Free
+		      </ion-label>
+		    </ion-item> 
+		</ion-card>
+    </div>
+
+	<ion-label>Shipping and Billing to: </ion-label>
+
+	<ion-card class="ship-info" *ngFor="let ship of shipping">
+	    <ion-item>
+	      <ion-label> 
+	      	<h2>{{ship.fullname}}</h2>
+			<p>{{ship.address}}, {{ship.city}}</p>
+			<p>{{ship.contact}}</p>
+	      </ion-label>
+	      
+	    </ion-item>
+	</ion-card>
+
+	<ion-label>Payment Method: </ion-label>
+
+	<ion-card class="bill-info">
+		<ion-item>
+	      <ion-label> 
+	      	<ion-icon name="{{paymentIcon}}" class="navicon" color="app"></ion-icon>
+	      	{{paymentMethod}}
+	      </ion-label>
+	      
+	    </ion-item> 
+	</ion-card>
+	
+    <div class="total">
+    	<h4 >Total:</h4>
+    	<h5 >Php {{totalpay.toFixed(2)}}</h5>
+    </div >
+</ion-content>
+
+<ion-footer>
+	<button ion-button full large color="app" (click)="continue()">
+		CONTINUE SHOPPING
+	</button>
+</ion-footer>
